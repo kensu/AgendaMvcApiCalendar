@@ -1,0 +1,46 @@
+<?php
+$v_params = $this->getParams();
+$v_contatos = $v_params['v_contatos'];
+require_once("header.phtml");
+?>
+
+<body>
+    <div id="tblcontc" align="center" style="width:80%; margin:0 auto;">
+        <table class="table text-center" style="width:100%;">
+
+            <tr class="thead-dark">
+                <td>Nombre</td>
+                <td>Email</td>
+                <td>Acciones</td>
+            </tr>
+            <?php
+            foreach($v_contatos AS $o_contato)
+            {
+                //echo "<pre>"; print_r($o_contato); echo "</pre>";
+                ?>
+                <tr>
+                    <td>
+                        <?php echo $o_contato->getNome()?>
+                    </td>
+                    <td>
+                        <?php echo $o_contato->getEmail()?>
+                    </td>
+                    <td>
+                        <a href='?controle=Telefone&acao=listarTelefones&in_con=<?php echo $o_contato->getId()?>'><i class="fas fa-mobile-alt"></i></a>
+                        &nbsp;&nbsp;
+                        <a href='?controle=Contato&acao=manterContato&in_con=<?php echo $o_contato->getId()?>'><i class="fas fa-edit"></i></a>
+                        &nbsp;&nbsp;
+                        <a href='?controle=Contato&acao=apagarContato&in_con=<?php echo $o_contato->getId()?>' ><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+        </table>
+        <br />
+        <a href='?controle=Contato&acao=manterContato' align="center">Nuevo Contacto</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+</body>
+</html>

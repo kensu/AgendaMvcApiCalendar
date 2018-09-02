@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+  
+*/
+
+.container{
+    margin-left: auto;
+	margin-right: auto;
+    width: 940px;
+    font-family: fantasy;
+    font-size: 18px;
+    /*font-weight: 400;*/
+    color: #ffffff;
+    background:#cccd0467
+    text-align:center
+}
+body{
+    margin-left:10px ;
+    margin-right: 10px;
+    width: 600px;
+    padding: 20px 10px 10px 10px;
+    font-family: fantasy;
+    font-size: 18px;
+    /*font-weight: 400;*/
+    /*color: #ffffff;*/
+    /*background:#ee0467*/
+   
+}
+.tblcontc{
+    width: 900px;
+    border:aliceblue 0.1px;
+    color: #ffffff;
+    align-self: auto;
+
+	}
+	
+.formgeral {
+    width: 400px;
+}
+
+.fa-trash-alt {
+    color:#953b39;
+}
+
+.fa-trash-alt:hover {
+    color:#a81a20;
+    font-size:1.1em;
+}

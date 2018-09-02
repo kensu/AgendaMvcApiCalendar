@@ -1,0 +1,49 @@
+<?php
+$v_params = $this->getParams();
+$o_contato = $v_params['o_contato'];
+require_once("header.phtml");
+?>
+
+<body>
+    <div id="tblcontc" >
+        <form method='post'>
+        <table  class="table" align="center">
+        <thead class="thead-dark">
+            <tr scope="col" align="center">
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th colspan="2" align="center">
+                    Acciones
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type='text' name='st_nome' value='<?php echo $o_contato->getNome()?>'> 
+                </td>
+                <td>
+                    <input type='email' name='st_email' value='<?php echo $o_contato->getEmail()?>'>
+                </td>             
+                <td align="center">
+                    <a href='?controle=Contato&acao=listarContato'><i class="fas fa-backspace"></i></a>
+                </td>
+                <td align="center">
+                    <input type='hidden' name='controle' value='Contato'>
+                    <inp0ut type='hidden' name='acao' value='manterContato'>
+                    <input type='hidden' name='in_con' value='<?php echo $o_contato->getId()?>'>
+                    <button type='submit' class='btn btn-light'><i class="far fa-save"></i></button>
+                </td>
+            </tr>         
+        </table>
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+</body>
+</html>

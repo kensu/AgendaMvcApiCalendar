@@ -1,0 +1,74 @@
+<?php
+$v_params = $this->getParams();
+$o_contato = $v_params['o_contato'];
+$o_telefone = $v_params['o_telefone'];
+require_once("header.phtml");
+?>
+
+<body>
+        <div id="tblcontc" align="center" style="width:80%; margin:0 auto;">
+            <table class="table text-center" style="width:100%;">
+            <tr>
+                <th>
+                <td> ID </td>
+                <td> Nombre </td>
+                <td> E-mail </td>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <?php echo $o_contato->getId()?>
+                </td>
+                <td>
+                    <?php echo $o_contato->getNome()?>
+                </td>
+                <td>
+                    <?php echo $o_contato->getEmail()?>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <form method='post'>
+        <div id="tblcontc" align="center" >
+        <table class="table">
+        <thead class="thead-dark">
+            <tr scope="col"> 
+                <th colspan="4" align="center">
+                    Telefonos:
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    cod
+                </th>
+                <th>
+                    Telefono
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type='text' name='in_ddd' value='<?php echo $o_telefone->getDDD()?>' size="5" maxlength="3">
+                </td>
+                <td align="center">
+                    <input type='number' name='in_telefone' value='<?php echo $o_telefone->getTelefone()?>'>
+                </td>
+                <td align="center">
+                    <input type='hidden' name='controle' value='Telefone'>
+                    <input type='hidden' name='acao' value='manterTelefone'>
+                    <input type='hidden' name='in_con' value='<?php echo $o_contato->getId()?>'>
+                    <input type='hidden' name='in_tel' value='<?php echo $o_telefone->getId()?>'>
+                    <button type='submit' class='btn btn-light'>Guardar</button>
+                </td>
+            </tr>
+        </table>
+        </form>
+        <br />
+        <a href='?controle=Telefone&acao=listarTelefones&in_con=<?php echo $o_contato->getId()?>'>Cancelar</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+</body>
+</html>
